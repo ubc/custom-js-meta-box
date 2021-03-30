@@ -366,6 +366,10 @@ jQuery(document).ready(function(){
 	  onCursorActivity: function() {
       hlLine = editor.setLineClass(editor.getCursor().line, "activeline");
 	    editor.setLineClass(hlLine, null);
-	  }
+	  },
+    onChange: function (cm) {
+      editor.save();
+    }
 	});
+  setTimeout(function(){ editor.refresh(); }, 1000);
 });
